@@ -1,5 +1,5 @@
 
-//why this?
+//Operator precedence: typeof > !=
 typeof window != "undefined"; //true
 typeof (window != "undefined"); //"boolean"
 
