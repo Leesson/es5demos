@@ -1,7 +1,6 @@
 /**
- * shallow copy - 浅复制
- * from dojo.
- * 有待进一步封装
+ * What different between the factory return an Object and return a Class? And which better?
+ * vertify this question later.
  */
 (function (global, factory) {
 
@@ -86,6 +85,8 @@
             return dest; // Object
         };
 
+        // shallow copy - 浅复制
+        // from dojo
         self.mixin = function(dest, sources){
             // summary:
             //		Copies/adds all properties of one or more sources to dest; returns dest.
