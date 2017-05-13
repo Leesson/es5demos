@@ -7,11 +7,18 @@
 var EventUtil = {
     addHandler: function (element, type, handler) {
         if (element.addEventListener) {
-            // DOM2
+            // DOM2. see: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+            // @param
+            //     type: A string representing the event type to listen out for. such as "click", "mouseon"
+            //     handler: The object which receives a notification (an object that implements the Event interface) when an event of the specified type occurs.
+            //         This must be an object implementing the EventListener interface, or a JavaScript function.
+            //     options, optional. rarely used.
+            //     useCapture, optional. A Boolean which indicates that events of this type will be dispatched to the registered listener.
             element.addEventListener(type, handler, false);
         } else if (element.attachEvent) {
             // IE
-            // variable this point to window in handler
+            // events will be dispatched on bubbling phase, and in reverse subscribe order
+            // variable 'this' point to window in handler
             element.attachEvent("on" + type, handler);
         } else {
             // DOM0
