@@ -17,7 +17,7 @@ var EventUtil = {
             element.addEventListener(type, handler, false);
         } else if (element.attachEvent) {
             // IE
-            // events will be dispatched on bubbling phase, and in reverse subscribe order
+            // events will be dispatched on bubbling phase, and in reverse subscribed order
             // variable 'this' point to window in handler
             element.attachEvent("on" + type, handler);
         } else {
